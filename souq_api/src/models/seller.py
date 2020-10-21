@@ -8,6 +8,5 @@ class Seller(mongoengine.Document):
     price = mongoengine.StringField()
     category = mongoengine.StringField()
     seller_id = mongoengine.StringField()
-
     owner_id = mongoengine.StringField()
     created_at = mongoengine.DateTimeField()

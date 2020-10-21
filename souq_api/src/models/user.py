@@ -1,19 +1,19 @@
-from mongoengine import *
+import mongoengine
 from datetime import datetime
 from passlib.hash import pbkdf2_sha256 as sha256
 
 
-class User(Document):
-    username = StringField()
-    first_name = StringField()
-    middel_name = StringField()
-    last_name = StringField()
-    password = StringField()
+class User(mongoengine.Document):
+    username = mongoengine.StringField()
+    first_name = mongoengine.StringField()
+    middel_name = mongoengine.StringField()
+    last_name = mongoengine.StringField()
+    password = mongoengine.StringField()
 
     
 
-    def add_tasklist(self, tasklist_id):
-        self.tasklists.append(tasklist_id)
+    def add_item(self, tasklist_id):
+        self.tasklists.append(item_id)
 
     @staticmethod
     def generate_hash(password):
